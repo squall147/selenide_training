@@ -2,7 +2,8 @@ package basics;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.WebDriverRunner;
-import org.junit.Test;
+import io.github.bonigarcia.wdm.ChromeDriverManager;
+import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Selectors.byName;
 import static com.codeborne.selenide.Selectors.byText;
@@ -23,7 +24,7 @@ public class FirstTest {
         sleep(3000);
 
         // $ - find element.
-        $(byName("q")).setValue("robertkaszubowski.com").pressEnter();
+        $(byName("q")).setValue("http://robertkaszubowski.com/").pressEnter();
 
         sleep(3000);
 
@@ -41,17 +42,24 @@ public class FirstTest {
     @Test
     public void simpleConfigurationAndUsingPureSelenium() {
 
-        System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriverMac2");
-        // System.setProperty("selenide.browser", "Chrome");
-
+        // System.setProperty("webdriver.chrome.driver", "src/test/resources/drivers/chromedriverMac");
+        // We can do it easier without downloading drivers:
+        ChromeDriverManager.getInstance().setup();
         browser = "chrome";
-        baseUrl = "robertkaszubowski.com";
 
         // We have access to Selenium methods. However in many cases we do not need them.
         WebDriverRunner.clearBrowserCache();
         WebDriverRunner.getWebDriver().manage().window().maximize();
+        baseUrl = "http://robertkaszubowski.com/";
 
         open(baseUrl);
+        sleep(3000);
+        close();
 
+        browser = "firefox";
+
+        open(baseUrl);
+        sleep(3000);
+        close();
     }
 }
