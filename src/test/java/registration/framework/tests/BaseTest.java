@@ -1,4 +1,4 @@
-package registration.framework;
+package registration.framework.tests;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;

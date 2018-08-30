@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Condition.enabled;
 import static com.codeborne.selenide.Condition.visible;
 
 public class BasePage {
-    protected static final int WAIT_FOR_FRAME_TIMEOUT = 10000;
+
     protected static final int WAIT_FOR_ELEMENT_TIMEOUT = 20000;
     protected static final int POLLING_INTERVAL = 1000;
 
