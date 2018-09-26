@@ -19,8 +19,11 @@ http://joel-costigliola.github.io/assertj/
 Przerób na Selenide, utworzony na zajęciach mini framework do testów strony:
 
 https://www.phptravels.net/login
+
 Email user@phptravels.com
+
 Password demouser
 
 Scenariusze do pokrycia: Logowanie, sprawdzenie czy menu zawiera wszystkie elementy,  czy działa guzik „Details” w hotelach. 
+
 Zastosuj to czego się nauczyłeś – wzorce, dobre praktyki, znaczące nazwy, czysty kod, struktura projektu. 
